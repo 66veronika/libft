@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 20:59:34 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/14 20:59:35 by veronikasko      ###   ########.fr       */
+/*   Created: 2025/11/12 13:07:25 by vskopova          #+#    #+#             */
+/*   Updated: 2025/11/12 13:07:26 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int c)
+size_t	ft_strlen(const char *str)
 {
-	if (c >= '0'|| c <= '9')
-		return (1);
-	return (0);
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }
+/*
+int	main (void)
+{
+	printf("lenght of str: %zu", ft_strlen("hello"));
+	return 0;
+}*/

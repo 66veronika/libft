@@ -1,42 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 13:46:58 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/15 18:59:13 by veronikasko      ###   ########.fr       */
+/*   Created: 2025/11/13 12:33:56 by vskopova          #+#    #+#             */
+/*   Updated: 2025/11/16 13:26:09 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isalpha(int c)
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+	unsigned char		*d;
+	const unsigned char	*s;
+	size_t				i;
 
-/*
-int	ft_isalpha(int c)
-{
-	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
-}
-
-int	main(void)
-{
-	char *str = "Hello123";
-	int i = 0;
-
-	while (str[i])
+	d = (unsigned char *)dest;
+	s = (const unsigned char *)src;
+	i = 0;
+	if (!dest || !src)
+		return (NULL);
+	while (i < n)
 	{
-		if (ft_isalpha(str[i]))
-			printf("%c is a letter\n", str[i]);
-		else
-			printf("%c is NOT a letter\n", str[i]);
+		d[i] = s[i];
 		i++;
 	}
+	return (dest);
+}
+/*
+int	main(void)
+{
+	char src[] = "Hello, world!";
+	char dest[20];
+
+	ft_memcpy(dest, src, 6); 
+	dest[6] = '\0'; 
+
+	printf("src:  %s\n", src);
+	printf("dest: %s\n", dest);
+
 	return (0);
 }*/

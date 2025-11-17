@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isdigit.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/14 20:59:34 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/14 20:59:35 by veronikasko      ###   ########.fr       */
+/*   Created: 2025/11/16 12:17:52 by veronikasko       #+#    #+#             */
+/*   Updated: 2025/11/16 13:26:03 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-int	ft_isdigit(int c)
+int ft_toupper(int c)
 {
-	if (c >= '0'|| c <= '9')
-		return (1);
-	return (0);
+    if (c >= 97 && c <= 122)
+        c -= 32;
+    return (c);
 }
