@@ -3,35 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/16 14:04:06 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/16 17:18:07 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/17 16:31:17 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-    int i;
-    char    *last;
-    last = NULL;
-   
-    i = 0;
-    while (s[i])
-    {
-        if (s[i] == (unsigned char)c)
-        {
-            last = ((char *)&s[i]);
-        }
-        i++;
-    }
-    if (s[i] == (unsigned char)c)
-        {
-            return ((char *)&s[i]);
-        }
-    return (last);
+	int		i;
+	char	*last;
+
+	last = NULL;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char)c)
+		{
+			last = ((char *)&s[i]);
+		}
+		i++;
+	}
+	if (s[i] == (unsigned char)c)
+	{
+		return ((char *)&s[i]);
+	}
+	return (last);
 }
 /*
 int main(void)

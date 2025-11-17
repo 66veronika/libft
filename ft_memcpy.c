@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/13 12:33:56 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/16 13:26:09 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/17 16:24:58 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
 	unsigned char		*d;

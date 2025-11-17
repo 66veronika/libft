@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/14 20:59:46 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/15 18:59:32 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/17 16:35:08 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 int	ft_isalnum(int c)
 {
-	return ((c >= 48 && c <= 57) || (c >= 97 && c <= 122) || (c >= 65 && c <= 90));
+	return ((c >= 48 && c <= 57) || (c >= 97 && c <= 122)
+		|| (c >= 65 && c <= 90));
 }
