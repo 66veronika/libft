@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:01:29 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/17 16:22:24 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/18 14:00:18 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
