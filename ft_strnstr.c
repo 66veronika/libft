@@ -6,7 +6,7 @@
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:41:03 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/18 18:29:57 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/19 17:05:17 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ int	main(void)
 	printf("Test 2: hledám \"%s\" v \"%s\" (len = 5)\n", little2, big);
     printf("Výsledek: %s\n\n", ft_strnstr(big, little2, 5));
 	return 0;
-}*/

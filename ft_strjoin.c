@@ -1,42 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/18 16:29:51 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/19 17:05:31 by vskopova         ###   ########.fr       */
+/*   Created: 2025/11/19 16:51:43 by vskopova          #+#    #+#             */
+/*   Updated: 2025/11/19 16:58:00 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*dest;
-	int		lenght;
-	int		i;
-
-	lenght = 0;
-	while (s[lenght])
-		lenght++;
-	dest = (char *)malloc(sizeof(char) * (lenght + 1));
-	if (!dest)
+	char	*nstr;
+	size_t	i;
+	
+	if (!s1 || !s2)
 		return (NULL);
-	i = 0;
-	while (i < lenght)
-	{
-		dest[i] = s[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	nstr = malloc(ft_strlen(s1) + ft_strlen(s2));
+	if (!nstr)
+		return (NULL);
+	
 }
-/*
-int	main(void)
-{
-	char s[] = "helloo";
-	printf("string: %s\n", ft_strdup(s));
-	return 0;
-}*/

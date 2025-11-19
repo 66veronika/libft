@@ -6,30 +6,32 @@
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 13:32:22 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/19 16:26:40 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/19 16:50:41 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*subs;
 	size_t	i;
-	
+
 	if (!s)
 		return (NULL);
-	while(s[start] < (start + len))
-	{
-		subs = malloc(len);
-		subs = (unsigned char *)s;
-		start++;		
-	}
+	subs = malloc(len + 1);
 	if (!subs)
 		return (NULL);
+	i = 0;
+	while (i < len && s[start])
+	{
+		subs[i] = s[start + i];
+		i++;
+	}
+	subs[i] = '\0';
 	return (subs);
-	
 }
-
+/*
 int main(void)
 {
 	int start = 3;
@@ -38,15 +40,16 @@ int main(void)
 
 	if (!subs)
 	{
-		printf("calloc selhala\n");
+		printf("calloc selhal\n");
 		return (1);
 	}
 
-	printf ("reult: %s", subs);
+	printf ("result: %s", subs);
 	  
 
 	printf("\n");
 
 	free(subs);
+	subs = NULL;
 	return 0;
-}
+}*/
