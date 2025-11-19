@@ -6,7 +6,7 @@
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 17:41:03 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/17 18:22:50 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/18 18:29:57 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	i = 0;
 	if (little[0] == '\0')
 	{
