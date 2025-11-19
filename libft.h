@@ -6,7 +6,7 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/11 13:47:22 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/18 14:03:20 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/19 13:33:07 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,7 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *big, const char *little, size_t len);
 int		ft_atoi(const char *nptr);
 void	*ft_calloc(size_t nmemb, size_t size);
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif
