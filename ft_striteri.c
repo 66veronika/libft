@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 21:20:09 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/25 01:06:27 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/25 01:25:12 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

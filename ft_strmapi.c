@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 18:20:30 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/24 22:04:36 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/25 01:25:50 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
 	char	*nst;
-	
+
 	if (!s)
 		return (NULL);
 	nst = ft_calloc(ft_strlen(s) + 1, sizeof(char));
