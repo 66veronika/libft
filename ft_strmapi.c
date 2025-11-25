@@ -1,57 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 16:51:43 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/23 00:07:43 by veronikasko      ###   ########.fr       */
+/*   Created: 2025/11/24 18:20:30 by veronikasko       #+#    #+#             */
+/*   Updated: 2025/11/24 22:04:36 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char	*nstr;
 	size_t	i;
-	size_t	j;
+	char	*nst;
 	
-	if (!s1 || !s2)
+	if (!s)
 		return (NULL);
-	nstr = malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!nstr)
+	nst = ft_calloc(ft_strlen(s) + 1, sizeof(char));
+	if (!nst)
 		return (NULL);
 	i = 0;
-	while (s1[i])
+	while (s[i])
 	{
-		nstr[i] = s1[i];
+		nst[i] = f(i, s[i]);
 		i++;
 	}
-	while (s2[j])
-	{
-		nstr[i + j] = s2[j];
-		j++; 
-	}
-	nstr[i + j] = '\0';
-	return (nstr);
+	return (nst);
 }
 /*
 int main(void)
 {
-    char *s1 = "Hello ";
-    char *s2 = "world!";
-    char *nstr = ft_strjoin(s1, s2);
+    char const *s = "hello world";
+    char *new_str;
 
-    if (!nstr)
+    new_str = function;
+    if (!new_str)
     {
-        printf("Allocation failed\n");
-        return (1);
+        printf("malloc selhal\n");
+        return 1;
     }
 
-    printf("Result: %s\n", nstr);
+    printf("puvodni string: %s\n", s);
+    printf("novy string:    %s\n", new_str);
 
-    free(nstr);
+    free(new_str);
     return 0;
 }*/
