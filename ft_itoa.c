@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 01:13:10 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/26 17:28:22 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/27 00:44:57 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static int	n_len(long n)
 	}
 	return (len);
 }
+
 static void	convert(long num, char *res, int len)
 {
 	if (num == 0)
@@ -44,6 +45,7 @@ static void	convert(long num, char *res, int len)
 		num /= 10;
 	}
 }
+
 char	*ft_itoa(int n)
 {
 	char	*res;
@@ -55,7 +57,7 @@ char	*ft_itoa(int n)
 	res = malloc(len + 1);
 	if (!res)
 		return (NULL);
-	res[len] = '\0'; 
+	res[len] = '\0';
 	convert(num, res, len);
 	return (res);
 }

@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 22:07:26 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/27 00:42:50 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/27 00:43:58 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static int	word_count(char const *s, char c)
 {
 	int	i;
@@ -51,7 +52,7 @@ static char	*word_copy(char const *s, char c)
 	int		i;
 	int		len;
 	char	*word;
-	
+
 	len = word_len(s, c);
 	word = malloc(len + 1);
 	if (!word)
@@ -69,7 +70,7 @@ static char	*word_copy(char const *s, char c)
 static int	skip_c(char const *s, char c)
 {
 	int	i;
-	
+
 	i = 0;
 	while (s[i] == c)
 		i++;
@@ -81,10 +82,10 @@ char	**ft_split(char const *s, char c)
 	char	**split;
 	int		i;
 	int		j;
-	
+
 	if (!s)
 		return (NULL);
-	split = malloc((word_count(s, c) + 1)* sizeof(char *));
+	split = malloc((word_count(s, c) + 1) * sizeof(char *));
 	if (!split)
 		return (NULL);
 	i = 0;
