@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 22:07:26 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/26 23:37:50 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/26 23:59:11 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,6 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 	int		w_len;
-	
 	
 	split = malloc((word_count(s, c) + 1)* sizeof(char *));
 	i = 0;
