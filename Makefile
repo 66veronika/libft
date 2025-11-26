@@ -2,7 +2,7 @@ NAME		= libft.a
 CC			= cc
 CFLAGS		= -Wall -Werror -Wextra
 AR			= ar rcs
-INCLUDES	= -I
+INCLUDES	= -I.
 
 SRCS		=	ft_isalpha.c\
 				ft_isdigit.c\
@@ -51,7 +51,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
@@ -60,7 +60,7 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
-	$(MAKE) all
+
 .PHONY: all clean fclean re
 
 #bonus: $(OBJS) $(BONUS_OBJS)
