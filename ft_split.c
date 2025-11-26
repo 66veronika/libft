@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 22:07:26 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/11/26 23:59:11 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/27 00:42:50 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,36 +46,60 @@ static int	word_len(char const *s, char c)
 	return (len);
 }
 
+static char	*word_copy(char const *s, char c)
+{
+	int		i;
+	int		len;
+	char	*word;
+	
+	len = word_len(s, c);
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		word[i] = s[i];
+		i++;
+	}
+	word[i] = '\0';
+	return (word);
+}
+
+static int	skip_c(char const *s, char c)
+{
+	int	i;
+	
+	i = 0;
+	while (s[i] == c)
+		i++;
+	return (i);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**split;
 	int		i;
 	int		j;
-	int		k;
-	int		w_len;
 	
-	split = malloc((word_count(s, c) + 1)* sizeof(char *));
-	i = 0;
-	j = 0;
 	if (!s)
 		return (NULL);
+	split = malloc((word_count(s, c) + 1)* sizeof(char *));
+	if (!split)
+		return (NULL);
+	i = 0;
+	j = 0;
 	while (s[i])
 	{
-		while (s[i] == c)
-			i++;
-		w_len = word_len(s + i, c);
-		split[j] = malloc(w_len + 1);
-		if (!split[j])
-			return (NULL);
-		k = 0;
-		while (k < w_len)
+		i += skip_c(s + i, c);
+		if (s[i])
 		{
-			split[j][k] = s[i + k];
-			k++;
+			split[j] = word_copy(s + i, c);
+			if (!split[j])
+				return (NULL);
+			i += word_len(s + i, c);
+			j++;
 		}
-		split[j][w_len] = '\0';
-		i += w_len;
-		j++;
 	}
 	split[j] = NULL;
 	return (split);
