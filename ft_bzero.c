@@ -6,7 +6,7 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/12 14:01:29 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/18 14:00:18 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/11/28 00:40:47 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_bzero(void *s, size_t n)
 {
 	size_t			i;
-	unsigned char	*str;
+	char			*str;
 
 	i = 0;
-	str = (unsigned char *)s;
+	str = (char *)s;
 	while (i < n)
 	{
-		*str = 0;
+		str[i] = 0;
 		i++;
 	}
 }
