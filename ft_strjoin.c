@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 16:51:43 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/25 01:25:33 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/11/29 16:25:11 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		nstr[i] = s1[i];
 		i++;
 	}
+	j = 0;
 	while (s2[j])
 	{
 		nstr[i + j] = s2[j];
