@@ -6,9 +6,11 @@
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 18:32:34 by vskopova          #+#    #+#             */
-/*   Updated: 2025/11/18 18:29:47 by vskopova         ###   ########.fr       */
+/*   Updated: 2025/12/01 13:08:06 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #include "libft.h"
 
@@ -19,6 +21,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 
 	if (nmemb == 0 || size == 0)
 		return (malloc(0));
+	if (nmemb > INT_MAX / size)
+		return (NULL);
+	if ((int)nmemb < 0 || (int)size < 0)
+		return (NULL);
 	res = nmemb * size;
 	p = malloc(res);
 	if (!p)
