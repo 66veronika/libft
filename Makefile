@@ -40,10 +40,10 @@ SRCS		=	ft_isalpha.c\
 				ft_putnbr_fd.c\
 				
 
-OBJS		= $(SRCS:.c=.o)
+OBJS		=	$(SRCS:.c=.o)
 
-#BONUS		= 
-#BONUS_OBJS	= $(BONUS:.c=.o)
+#BONUS		=	ft_lstnew.c\
+#BONUS_OBJS	=	$(BONUS:.c=.o)
 
 all: $(NAME)
 
