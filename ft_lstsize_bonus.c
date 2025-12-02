@@ -6,7 +6,7 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 09:51:14 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/02 12:10:15 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/12/02 17:30:03 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int	ft_lstsize(t_list *lst)
 /*
 int	main(void)
 {
-	t_list *node1 = ft_lstnew("Ahoj");
-    t_list *node2 = ft_lstnew("Čau");
+	t_list *node1 = ft_lstnew("hi");
+    t_list *node2 = ft_lstnew("hello");
     t_list *node3 = ft_lstnew("Hola");
 
 	node1->next = node2;

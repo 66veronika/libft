@@ -6,7 +6,7 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 21:32:01 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/02 11:48:19 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/12/02 17:35:57 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,31 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+/*
+int main(void)
+{
+    t_list *list;
+	list = NULL;
+
+    t_list *a = ft_lstnew("hi");
+    t_list *b = ft_lstnew("hello");
+    t_list *c = ft_lstnew("Hola");
+
+    ft_lstadd_front(&list, a);
+    ft_lstadd_front(&list, b);
+	ft_lstadd_front(&list, c);
+
+    t_list *current;
+	current = list;
+    while (current)
+    {
+        printf("%s -> ", (char *)current->content);
+        current = current->next;
+    }
+    printf("NULL\n");
+
+    return 0;
+}*/
 /*
 int main(void)
 {
