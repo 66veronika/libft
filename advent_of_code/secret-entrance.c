@@ -61,8 +61,7 @@ int	process_code(char *line, int position)
 		i++;
 	}
 	if (line[0] == 'L')
-	{
-
+	{	
 		position = (position - res) % 100;
 		if (position < 0)
 			position += 100;
