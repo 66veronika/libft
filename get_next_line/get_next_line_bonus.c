@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/26 01:29:41 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/12/27 21:17:29 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*get_next_line(int fd) 
 {
 	char		*line;
-	static char	*stash;
+	static char	*stash[OPEN_MAX];
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	stash = read_and_stash(fd, stash);
-	if (!stash)
+	stash[fd] = read_and_stash(fd, stash[fd]);
+	if (!stash[fd])
 		return (NULL);
-	line = get_line(stash);
-	stash = clean_stash(stash);
+	line = get_line(stash[fd]);
+	stash[fd] = clean_stash(stash[fd]);
 	return (line);
 }
 

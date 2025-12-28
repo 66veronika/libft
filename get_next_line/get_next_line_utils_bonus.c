@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   get_next_line_utils_bonus.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/28 00:21:57 by veronikasko      ###   ########.fr       */
+/*   Updated: 2025/12/27 21:19:36 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -64,6 +64,20 @@ char	*ft_strchr(const char *s, int c)
 	if(s[i] == (unsigned char)c)
 		return ((char*)&s[i]);
 	return (NULL);
+}
+
+void	ft_bzero(void *s, size_t n)
+{
+	size_t			i;
+	char			*str;
+
+	i = 0;
+	str = (char *)s;
+	while (i < n)
+	{
+		str[i] = 0;
+		i++;
+	}
 }
 
 char	*ft_strdup(const char *s)
