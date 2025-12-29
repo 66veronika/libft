@@ -57,6 +57,14 @@ cc -Wall -Wextra -Werror get_next_line.c get_next_line_utils.c main.c
 To compile bonus part, run:
 cc -Wall -Wextra -Werror get_next_line_bonus.c get_next_line_utils_bonus.c main.c
 
+
+ALGORITHM
+This approach ensures that each call to get_next_line() returns exactly one line, handles files of any size regardless of BUFFER_SIZE, and preserves unread data using a static stash.
+It also allows reading from multiple file descriptors (bonus) without losing state for each file.
+Using a static variable avoids unnecessary global variables and keeps memory usage predictable, while incremental reading prevents loading the whole file into memory at once.
+I chose this way of completing this project after having it explained to me by other peers.
+
+
 RESOURCES
 https://www.geeksforgeeks.org/c/input-output-system-calls-c-create-open-close-read-write/
 https://42-cursus.gitbook.io/guide/1-rank-01/get_next_line
