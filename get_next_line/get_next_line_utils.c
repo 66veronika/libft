@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/28 00:21:57 by veronikasko      ###   ########.fr       */
+/*   Updated: 2026/01/06 17:25:27 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,19 +50,20 @@ size_t	ft_strlen(const char *str)
 		i++;
 	return (i);
 }
+
 char	*ft_strchr(const char *s, int c)
 {
 	int	i;
-	
+
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		if (s[i] == (unsigned char)c)
-			return ((char*)&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
-	if(s[i] == (unsigned char)c)
-		return ((char*)&s[i]);
+	if (s[i] == (unsigned char)c)
+		return ((char *)&s[i]);
 	return (NULL);
 }
 
@@ -73,13 +74,13 @@ char	*ft_strdup(const char *s)
 	char	*dest;
 
 	len = 0;
-	while(s[len])
+	while (s[len])
 		len++;
 	dest = malloc((len + 1) * sizeof(char));
-	if(!dest)
+	if (!dest)
 		return (NULL);
 	i = 0;
-	while(i < len)
+	while (i < len)
 	{
 		dest[i] = s[i];
 		i++;
@@ -87,4 +88,3 @@ char	*ft_strdup(const char *s)
 	dest[i] = '\0';
 	return (dest);
 }
-

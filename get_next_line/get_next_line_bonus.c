@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2025/12/27 21:17:29 by veronikasko      ###   ########.fr       */
+/*   Updated: 2026/01/06 17:36:33 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-char	*get_next_line(int fd) 
+char	*get_next_line(int fd)
 {
 	char		*line;
 	static char	*stash[OPEN_MAX];
@@ -46,7 +46,7 @@ char	*read_and_stash(int fd, char *stash)
 			return (NULL);
 		}
 		if (bytes_read == 0)
-			break;
+			break ;
 		buffer[bytes_read] = '\0';
 		temp = ft_strjoin(stash, buffer);
 		free(stash);
@@ -60,27 +60,27 @@ char	*get_line(char *stash)
 {
 	char	*line;
 	int		i;
-	
-	if(!stash)
-		return (NULL);
-	i = 0;
-	while(stash[i] && stash[i] != '\n')
-		i++;
-	line = malloc(i + 2);
-	if(!line)
+
+	if (!stash)
 		return (NULL);
 	i = 0;
 	while (stash[i] && stash[i] != '\n')
-    {
-        line[i] = stash[i];
-        i++;
+		i++;
+	line = malloc(i + 2);
+	if (!line)
+		return (NULL);
+	i = 0;
+	while (stash[i] && stash[i] != '\n')
+	{
+		line[i] = stash[i];
+		i++;
 	}
 	if (stash[i] == '\n')
 	{
 		line[i] = '\n';
 		i++;
 	}
-    line[i] = '\0';
+	line[i] = '\0';
 	return (line);
 }
 
@@ -89,23 +89,22 @@ char	*clean_stash(char *stash)
 	char	*temp;
 	int		i;
 
-	if(!stash)
+	if (!stash)
 		return (NULL);
 	i = 0;
-	while(stash[i] && stash[i] != '\n')
+	while (stash[i] && stash[i] != '\n')
 		i++;
 	if (!stash[i])
 	{
 		free(stash);
 		return (NULL);
 	}
-    temp = ft_strdup(stash + i + 1);
-    free(stash);
-	if(temp[0] == '\0')
+	temp = ft_strdup(stash + i + 1);
+	free(stash);
+	if (temp[0] == '\0')
 	{
 		free(temp);
 		return (NULL);
 	}
-    return (temp);
+	return (temp);
 }
-

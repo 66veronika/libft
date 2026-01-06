@@ -70,3 +70,4 @@ https://www.geeksforgeeks.org/c/input-output-system-calls-c-create-open-close-re
 https://42-cursus.gitbook.io/guide/1-rank-01/get_next_line
 https://medium.com/@beatrizbazaglia/get-next-line-3872eb3189e6
 https://labex.io/tutorials/c-how-to-manage-input-buffer-in-c-418766
+I used AI for planning my structure and to help break a function into two
