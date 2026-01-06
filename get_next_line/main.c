@@ -6,14 +6,14 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/26 00:21:20 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/06 17:46:15 by veronikasko      ###   ########.fr       */
+/*   Updated: 2026/01/06 18:26:39 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
 //main_bonus
-
+/*
 int		main(void)
 {
 	int		fd1;
@@ -50,7 +50,7 @@ int		main(void)
 	close(fd1);
     close(fd2);
 	return (0);
-}
+}*/
 
 //main
 /*
