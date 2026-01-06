@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/06 18:20:59 by vskopova         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:48:59 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

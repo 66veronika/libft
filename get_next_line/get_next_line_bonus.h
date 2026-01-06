@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
+/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 19:21:03 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/06 17:51:41 by vskopova         ###   ########.fr       */
+/*   Updated: 2026/01/06 18:43:04 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 #  define BUFFER_SIZE 1000
 # endif
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1000
+# ifndef OPEN_MAX
+#  define OPEN_MAX 100
 # endif
 
 char	*get_next_line(int fd);
