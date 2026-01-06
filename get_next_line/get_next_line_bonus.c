@@ -6,7 +6,7 @@
 /*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 17:55:00 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/06 17:36:33 by vskopova         ###   ########.fr       */
+/*   Updated: 2026/01/06 19:41:20 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,15 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*stash[OPEN_MAX];
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= OPEN_MAX || BUFFER_SIZE <= 0)
 		return (NULL);
 	stash[fd] = read_and_stash(fd, stash[fd]);
-	if (!stash[fd])
+	if (!stash[fd] || stash[fd][0] == '\0')
+	{
+		free(stash[fd]);
+		stash[fd] = NULL;
 		return (NULL);
+	}
 	line = get_line(stash[fd]);
 	stash[fd] = clean_stash(stash[fd]);
 	return (line);
