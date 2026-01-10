@@ -3,11 +3,10 @@
 
 int	main(void)
 {
-	char *str = "hi";
+	
 
-	ft_printf(" %c %c %c\n ", '0', 0, '1');
-	printf(" %c %c %c ", '0', 0, '1');
 
-	ft_putchar(0);
+	ft_printf("%p\n", 0);
+	printf("%p", 0);
 	
 }
