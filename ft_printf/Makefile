@@ -5,7 +5,14 @@ AR			= ar rcs
 RM 			= rm -rf
 INCLUDES	= -I.
 
-SRCS		=	ft_isalpha.c\
+SRCS		=	ft_printf.c\
+				ft_putchar.c\
+				ft_puthex.c\
+				ft_putnbr.c\
+				ft_putptr.c\
+				ft_putstr.c\
+				ft_putunsigned.c\
+
 
 OBJS		=	$(SRCS:.c=.o)
 

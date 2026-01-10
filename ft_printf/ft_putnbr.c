@@ -1,25 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 00:23:23 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/08 13:16:13 by veronikasko      ###   ########.fr       */
+/*   Created: 2026/01/08 18:20:24 by veronikasko       #+#    #+#             */
+/*   Updated: 2026/01/09 19:25:11 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+
+int	ft_putnbr(int n)
 {
-	write(fd, &c, 1);
+		int	count;
+
+		count = 0;
+		if (n == -2147483648)
+		{
+			return (write(1, "-2147483648", 11));
+		}
+		if (n < 0)
+		{
+			count += ft_putchar('-');
+			n = -n;
+		}
+		if (n >= 10)
+			count += ft_putnbr(n / 10);
+		count += ft_putchar((n % 10) + '0');
+		return (count);
 }
-/*
-int	main(void)
-{
-	int	fd = 1;
-	char	c = 'a';
-	ft_putchar_fd(c, fd);
-}*/

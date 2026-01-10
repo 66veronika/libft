@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_puthex.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 00:23:23 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/08 13:16:13 by veronikasko      ###   ########.fr       */
+/*   Created: 2026/01/08 18:10:13 by veronikasko       #+#    #+#             */
+/*   Updated: 2026/01/09 14:41:53 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int ft_puthex(unsigned long n, char *hex)
 {
-	write(fd, &c, 1);
+    int count;
+	
+	count = 0;
+    if (n >= 16)
+        count += ft_puthex(n / 16, hex);
+    count += write(1, &hex[n % 16], 1);
+    return (count);
 }
-/*
-int	main(void)
-{
-	int	fd = 1;
-	char	c = 'a';
-	ft_putchar_fd(c, fd);
-}*/

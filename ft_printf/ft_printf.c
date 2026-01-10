@@ -6,52 +6,57 @@
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 13:07:58 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/06 13:24:31 by veronikasko      ###   ########.fr       */
+/*   Updated: 2026/01/10 22:33:49 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int format_type(char c, va_list args);
+
 int ft_printf(const char *format, ...)
 {
-    va_list args;
-    int count = 0;
-    int i = 0;
+	va_list args;
+	int count;
+	int i;
 
-    va_start(args, format);
-    while (format[i])
-    {
-        if (format[i] == '%')
-        {
-            i++;
-            count += handle_format(format[i], args);
-        }
-        else
-            count += write(1, &format[i], 1);
-        i++;
-    }
-    va_end(args);
-    return count;
-}
-void handle_format(va_list va, char *str, size_t *counter)
-{
-	if (*str == 'c')
-		ft_putchar_pf(va_arg(va, int), counter);
-	else if (*str == 's')
-		ft_putstr_pf(va_arg(va, char *), counter);
-	else if (*str == 'p')
-		ft_putptr_pf(va_arg(va, void *), counter);
-	else if (*str == 'i' || *str == 'd')
-		ft_putnbr_pf(va_arg(va, int), counter);
-	else if (*str == 'u')
-		ft_putuint_pf(va_arg(va, unsigned int), counter);
-	else if (*str == 'x' || *str == 'X')
+	count = 0;
+	i = 0;
+
+	va_start(args, format);
+	while (format[i])
 	{
-		if (*str == 'x')
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_LOW_BASE);
+		if (format[i] == '%')
+		{
+			i++;
+			count += format_type(format[i], args);
+		}
 		else
-			ft_puthex_pf(va_arg(va, unsigned int), counter, HEX_UPP_BASE);
+		{
+			count += ft_putchar(format[i]);
+		}
+		i++;
 	}
-	else if (*str == '%')
-		ft_putchar_pf(*str, counter);
+	va_end(args);
+	return count;
+}
+int format_type(char c, va_list args)
+{
+	if (c == 'c')
+		return ft_putchar((char)va_arg(args, int));
+	else if (c == 's')
+		return ft_putstr(va_arg(args, char *));
+	else if (c == 'p')
+		return ft_putptr(va_arg (args, void *));
+	else if (c == 'd' || c == 'i')
+		return ft_putnbr(va_arg(args, int));
+	else if (c == 'u')
+		return ft_putunsigned(va_arg(args, unsigned int));
+	else if (c == 'x')
+		return ft_puthex(va_arg(args, unsigned int), "0123456789abcdef");
+	else if (c == 'X')
+		return ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF");
+	else if (c == '%')
+		return ft_putchar('%');
+	return 0;
 }

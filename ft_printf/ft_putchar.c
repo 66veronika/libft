@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 00:23:23 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/08 13:16:13 by veronikasko      ###   ########.fr       */
+/*   Created: 2026/01/08 13:14:11 by veronikasko       #+#    #+#             */
+/*   Updated: 2026/01/09 19:43:45 by veronikasko      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_putchar(char c)
 {
-	write(fd, &c, 1);
+	write(1, &c, 1);
+	return (1);
 }
-/*
-int	main(void)
-{
-	int	fd = 1;
-	char	c = 'a';
-	ft_putchar_fd(c, fd);
-}*/
