@@ -3,26 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: veronikaskopova <veronikaskopova@studen    +#+  +:+       +#+        */
+/*   By: vskopova <vskopova@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 13:07:58 by veronikasko       #+#    #+#             */
-/*   Updated: 2026/01/10 22:33:49 by veronikasko      ###   ########.fr       */
+/*   Updated: 2026/01/11 18:07:35 by vskopova         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int format_type(char c, va_list args);
+int	format_type(char c, va_list args);
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-	va_list args;
-	int count;
-	int i;
+	va_list	args;
+	int		count;
+	int		i;
 
 	count = 0;
 	i = 0;
-
 	va_start(args, format);
 	while (format[i])
 	{
@@ -38,25 +37,26 @@ int ft_printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	return count;
+	return (count);
 }
-int format_type(char c, va_list args)
+
+int	format_type(char c, va_list args)
 {
 	if (c == 'c')
-		return ft_putchar((char)va_arg(args, int));
+		return (ft_putchar((char)va_arg(args, int)));
 	else if (c == 's')
-		return ft_putstr(va_arg(args, char *));
+		return (ft_putstr(va_arg(args, char *)));
 	else if (c == 'p')
-		return ft_putptr(va_arg (args, void *));
+		return (ft_putptr(va_arg (args, void *)));
 	else if (c == 'd' || c == 'i')
-		return ft_putnbr(va_arg(args, int));
+		return (ft_putnbr(va_arg(args, int)));
 	else if (c == 'u')
-		return ft_putunsigned(va_arg(args, unsigned int));
+		return (ft_putunsigned(va_arg(args, unsigned int)));
 	else if (c == 'x')
-		return ft_puthex(va_arg(args, unsigned int), "0123456789abcdef");
+		return (ft_puthex(va_arg(args, unsigned int), "0123456789abcdef"));
 	else if (c == 'X')
-		return ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF");
+		return (ft_puthex(va_arg(args, unsigned int), "0123456789ABCDEF"));
 	else if (c == '%')
-		return ft_putchar('%');
-	return 0;
+		return (ft_putchar('%'));
+	return (0);
 }
